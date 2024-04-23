@@ -1,31 +1,21 @@
-import { 
-  Center,
-  ChakraProvider,
-  Input,
-  Box,
-  Button
-} from '@chakra-ui/react'
-import { login } from './services/login';
+import styled from "styled-components";
+import { Card } from "./components/Card";
 
 function App() {
   return (
-    <ChakraProvider>
-      <Box minHeight='100vh' backgroundColor='#9413dc' padding='25px'>
-        <Box backgroundColor='#FFFFFF' borderRadius='25px' padding='15px' >
-          <Center>
-            <h1>Faça o login</h1>
-          </Center>
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Center>
-            <Button onClick={login} colorScheme='teal' size='sm' width='100%' marginTop='5px'>
-              Button
-            </Button>
-          </Center>
-        </Box>
-      </Box>
-    </ChakraProvider>
+    <Container>
+      <Card />
+    </Container>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #9413dc;
+  padding: 25px;
+`;
